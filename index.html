@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jumia.css">
+    <style>
+        .topboy {
+            display: flex;
+            gap: 30px;
+        }
+
+        .pic {
+            display: flex;
+            gap: 40px;
+            align-content: center;
+            margin: 50px;
+            align-items: stretch;
+        }
+
+        .topboy p:hover {
+            color: greenyellow;
+            transition: 1s;
+        }
+
+        .colos2 img {
+            cursor: pointer;
+        }
+
+        .colos2 img:hover {
+            border: 2px solid blue;
+        }
+
+        .allbuttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px; 
+        }
+
+        .plusminusbtn {
+            gap: none;
+            height: 40px;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 25px;
+            height: 13px;
+            color: orange;
+            background-color: rgba(173, 216, 230, 0.137);
+            text-align: center;
+            line-height: 10px;
+            font-size: small;
+            outline: none;
+        }
+
+        .general {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0%;
+        }
+
+        .price {
+            font-size: small;
+            margin: 0;
+        }
+
+        .discount {
+            text-decoration: line-through;
+            font-size: small;
+            margin: 0;
+        }
+     
+
+        .plusminusbtn button,
+          .addtocart button {
+             height: 40px;  
+             border: none;
+    background: none; 
+    border-radius: 10px;
+                         }
+
+    
+
+.plusminusbtn button {
+    height: 40px; 
+    border: none;
+    background: none; 
+    font-size: large;
+}
+.addtocart button img {
+    background-color: orange;
+}
+
+
+    </style>
+</head>
+<body>
+<nav class="topboy">
+    <div>
+        <h2>Sneakers</h2>
+    </div>
+    <div>
+        <p>Collection</p>
+    </div>
+    <div>
+        <p>Men</p>
+    </div>
+    <div>
+        <p>Women</p>
+    </div>
+    <div>
+        <p>About</p>
+    </div>
+    <div>
+        <p>Contact</p>
+    </div>
+
+    <div style="margin-left: auto;">
+        <img src="/Picture/shoppingcart.jpeg" width="30px">
+        <img src="/Picture/dice6.jpg" width="30px">
+    </div>
+</nav>
+<hr>
+
+<div class="pic">
+    <div class="colos2">
+        <img id="mainImage" src="/pic2/WhatsApp Image 2024-03-25 at 11.43.47 AM.jpeg" width="300px" height="300px">
+        <div class="change">
+            <img src="/pic2/WhatsApp Image 2024-03-25 at 11.43.48 AM (1).jpeg" width="60px" onclick="changeImage(this)">
+            <img src="/pic2/WhatsApp Image 2024-03-25 at 11.43.48 AM.jpeg" width="60px" onclick="changeImage(this)">
+            <img src="/pic2/WhatsApp Image 2024-03-25 at 11.43.49 AM (1).jpeg" width="60px" onclick="changeImage(this)">
+            <img src="/pic2/WhatsApp Image 2024-03-25 at 11.43.48 AM.jpeg" width="60px" onclick="changeImage(this)">
+        </div>
+    </div>
+    <div class="colos">
+        <h4 style="color: orange;">SNEAKER COMPANY</h4>
+        <h1>Fall Limited Edition <br> Sneakers
+        </h1>
+        <p>
+            Lorem ipsum dolor sit amet,bconsectetur adipisicing elit. <br>Mollitia nobis vel placeat repudiandae magnam, molestiae <br>quos deleniti laborum eius cum accusamus, dignissimos in <br>ipsa id eos! Nam vero aliquam atque?
+        </p>
+        <div class="general">
+            <div>
+                <h4 class="price">$125.00</h4>
+            </div>
+
+            <div class="box">50%</div>
+        </div>
+        <p class="discount">$250.00</p>
+        <div class="allbuttons">
+            <div class="plusminusbtn">
+                <button onclick="minus()" style="color: orange;">-</button>
+                <button id="zero">0</button>
+                <button onclick="plus()" style="color: orange;">+</button>
+            </div>
+            <div class="addtocart">
+                <button onclick="addToCart()" style="background-color: orange; width: 200px;"><img src="/Picture/shoppingcart.jpeg" width="20px"> Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let zero = document.getElementById('zero')
+    zero.innerHTML = 0
+
+    function minus() {
+        zero.innerHTML--;
+
+    }
+
+    function plus() {
+        zero.innerHTML++;
+
+    }
+
+    function changeImage(element) {
+        let fullImage = document.getElementById('mainImage');
+        fullImage.src = element.src;
+    }
+
+    function addToCart() {
+        
+        window.location.href = "thanks_for_order.html";
+    }
+</script>
+
+</body>
+</html>
